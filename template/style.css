@@ -16,7 +16,6 @@ body {
 grid-template-columns: 1fr;
 grid-template-rows: 5rem 1fr 5rem;
 height: 100%; 
-
 }
 .header {
     grid-area: header;
@@ -39,5 +38,22 @@ height: 100%;
     padding: 1rem;
 }
 .header-links a:hover {
+    color: #ff8000;
+}
+.main {
+    grid-area: main;
+}
+.footer {
+    grid-area: footer;
+    background-color: #203040;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
     color: #ff8000;
 }
