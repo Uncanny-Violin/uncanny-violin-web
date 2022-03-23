@@ -1,5 +1,11 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Home from "./Home/Home";
+import Products from "./Products/Products";
+import Orders from './Orders/Orders'
+import OrderDetail from "./Orders/OrderDetail"
+import Payment from "./Payment/Payment"
 
 function App() {
 
@@ -12,11 +18,11 @@ function App() {
   }
 
   return (
+    <Router>
     <div className="grid-container">
-      <head>
         <link rel="stylesheet" href="style.css" />
         <title>Uncanny Violin</title>
-      </head>
+      
       <body>
         <header className="header">
           <div className="brand">
@@ -24,8 +30,10 @@ function App() {
             <a href="index.htm">Uncanny Violin</a>
           </div>
           <div className="header-links">
-            <a href="cart.html">Cart</a>
-            <a href="signin.html">Sign In</a>
+            <Link to="/">Home</Link>
+            <Link to="/catalog">Catalog</Link>
+            <Link to="/orders">Orders</Link>
+            <Link to="/payment">Payment</Link>
           </div>
         </header>
         <aside className="sidebar">
@@ -42,69 +50,18 @@ function App() {
           </ul>
         </aside>
         <main className="main">
-          <div className="content">
-            <ul className="products">
-              <li>
-                <div className="product">
-                  <img className="product-image" src="images/d1.jpg" alt="product" />
-                  <div className="product-name">
-                    <a href="product.html">Slim Shirt</a>
-                  </div>
-                  <div className="product-brand">Nike</div>
-                  <div className="product-price">$60</div>
-                  <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                </div>
-              </li>
-              <li>
-                <div className="product">
-                  <img className="product-image" src="images/d1.jpg" alt="product" />
-                  <div className="product-name">
-                    <a href="product.html">Slim Shirt</a>
-                  </div>
-                  <div className="product-brand">Nike</div>
-                  <div className="product-price">$60</div>
-                  <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                </div>
-              </li>
-              <li>
-                <div className="product">
-                  <img className="product-image" src="images/d1.jpg" alt="product" />
-                  <div className="product-name">
-                    <a href="product.html">Slim Shirt</a>
-                  </div>
-                  <div className="product-brand">Nike</div>
-                  <div className="product-price">$60</div>
-                  <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                </div>
-              </li>
-              <li>
-                <div className="product">
-                  <img className="product-image" src="images/d1.jpg" alt="product" />
-                  <div className="product-name">
-                    <a href="product.html">Slim Shirt</a>
-                  </div>
-                  <div className="product-brand">Nike</div>
-                  <div className="product-price">$60</div>
-                  <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                </div>
-              </li>
-              <li>
-                <div className="product">
-                  <img className="product-image" src="images/d1.jpg" alt="product" />
-                  <div className="product-name">
-                    <a href="product.html">Slim Shirt</a>
-                  </div>
-                  <div className="product-brand">Nike</div>
-                  <div className="product-price">$60</div>
-                  <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                </div>
-              </li>
-            </ul>
-          </div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/catalog" element={<Products />} />
+            <Route path="orders" element={<Orders />}></Route>
+            <Route path="/order/:id" element={<OrderDetail />}></Route>
+            <Route path="/payment" element={<Payment />}></Route>
+          </Routes>
         </main>
         <footer className="footer">&copy; 2021 Uncanny Violin</footer>
       </body>
     </div>
+    </Router>
   );
 }
 
