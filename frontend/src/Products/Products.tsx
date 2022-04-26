@@ -12,7 +12,7 @@ type Product = {
     imageUrl: string;
 }
 
-
+var emptyProducts:Product[];
 
 function Products() {
     const [products, setProducts]: [Product[], (products: Product[]) => void]
@@ -33,7 +33,7 @@ function Products() {
         <div className="content">
             <ul className="products">
                 {products.map((product) => (
-                    <li>
+                    <li key={product.id}>
                         <div className="product">
                             <img
                                 className="product-image"
