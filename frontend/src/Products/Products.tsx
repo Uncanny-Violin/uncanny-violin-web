@@ -20,7 +20,7 @@ function Products() {
         = useState(emptyProducts);
 
     useEffect(() => {
-        axios.get<Product[]>("https://localhost:7102/catalog",
+        axios.get<Product[]>("https://uncanny-violin-api.azurewebsites.net/catalog",
             {
                 headers: {
                     "Contenty-Type": "application/json",
