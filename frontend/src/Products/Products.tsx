@@ -12,7 +12,7 @@ type Product = {
     imageUrl: string;
 }
 
-var emptyProducts:Product[];
+const emptyProducts: Product[] = [];
 
 function Products() {
     const [products, setProducts]: [Product[], (products: Product[]) => void]
