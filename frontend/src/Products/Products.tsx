@@ -15,18 +15,19 @@ type Product = {
 const emptyProducts: Product[] = [];
 
 function Products() {
+
     const [products, setProducts]: [Product[], (products: Product[]) => void]
         = useState(emptyProducts);
-    
-    useEffect(() =>{
-        axios.get<Product[]>("https://localhost:7102/catalog",
+
+    useEffect(() => {
+        axios.get<Product[]>("https://uncanny-violin-api.azurewebsites.net/catalog",
             {
                 headers: {
-                    "Content-Type": "application/json",
+                    "Contenty-Type": "application/json",
                 },
             })
             .then((response) => setProducts(response.data))
-            .catch((error) => console.log(error))
+            .catch((error) => console.log(error));
     }, []);
 
     return (

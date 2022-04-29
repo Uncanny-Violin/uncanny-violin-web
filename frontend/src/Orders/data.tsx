@@ -1,5 +1,4 @@
-import { FOCUSABLE_SELECTOR } from "@testing-library/user-event/dist/utils";
-
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
     orders: [{
         _id: 1,
